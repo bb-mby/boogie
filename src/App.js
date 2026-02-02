@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Save, Users, AlertCircle, CheckCircle, XCircle, Shield } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Save, Users, AlertCircle, CheckCircle, XCircle, Instagram } from 'lucide-react';
 
-const CybersecurityAssessment = () => {
+const SocialMediaAssessment = () => {
   const [currentStep, setCurrentStep] = useState('name');
   const [candidateName, setCandidateName] = useState('');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -13,164 +13,154 @@ const CybersecurityAssessment = () => {
 
   const categories = [
     {
-      title: "1. Communication & Training Skills",
+      title: "1. Platform & Strategy Knowledge",
       questions: [
         {
           id: 1,
-          title: "Question 1 – Awareness & Didactics",
-          description: "How would you explain phishing to a non-technical business employee in maximum 2 minutes?",
+          title: "Question 1 – Platform Understanding",
+          description: "Which social media platforms do you usually work with, and how do they differ?",
           criteria: [
-            "Uses simple, relatable analogies (e.g., 'digital fishing')",
-            "Focuses on practical examples (fake emails, fake websites)",
-            "Shows empathy and adapts to audience level",
-            "Provides actionable tips (check sender, hover over links)",
-            "Stays within 2 minutes without overwhelming details"
+            "Names 3+ major platforms (Instagram, TikTok, LinkedIn, Facebook, Twitter/X)",
+            "Explains key differences (audience, content type, algorithm)",
+            "Shows practical experience with platform-specific features",
+            "Understands each platform's strengths and use cases",
+            "Can match platform to business goals"
           ],
-          redFlag: "Technical jargon, condescending tone, or unable to simplify complex concepts",
-          goodAnswer: "Phishing is a fraud attempt via email or message, where someone pretends to be a trustworthy entity, such as a bank or colleague. The goal is to get the recipient to click a link, enter data, or open an attachment. The most important protection is: be suspicious, check the sender, and don't click or enter sensitive data."
+          redFlag: "Only knows one platform, or gives generic answers without real understanding",
+          goodAnswer: "I mainly work with Instagram, TikTok, and LinkedIn. Instagram is great for visual storytelling and younger audiences (18-34). TikTok focuses on short-form video and trends, perfect for viral reach. LinkedIn is B2B-focused with professional content. Each has different algorithms - Instagram favors engagement time, TikTok prioritizes completion rate, LinkedIn values meaningful interactions."
         },
         {
           id: 2,
-          title: "Question 2 – Practical Awareness",
-          description: "What are the three most common security mistakes employees make – and how would you reduce them?",
+          title: "Question 2 – Goal-Driven Content",
+          description: "How do you decide what kind of content to post for a brand?",
           criteria: [
-            "Names realistic, common mistakes (weak passwords, clicking links, public WiFi)",
-            "Provides concrete, actionable solutions",
-            "Understands human behavior and psychology",
-            "Suggests measurable interventions (training, technical controls)",
-            "Balances education with technical safeguards"
+            "Starts with business goals and target audience",
+            "Considers brand identity and values",
+            "Uses data and insights from past performance",
+            "Balances trending content with evergreen content",
+            "Mentions content pillars or themes"
           ],
-          redFlag: "Only theoretical answers, blames users, or no practical solutions",
-          goodAnswer: "First: Blindly trusting emails. Second: Using passwords multiple times or making them too simple. Third: Ignoring security warnings. These mistakes can be reduced through regular training, simple rules, and clear examples."
-        },
-        {
-          id: 10,
-          title: "Question 10 – Reality Check",
-          description: "What do you think is often done wrong in awareness trainings – and how would you do it better?",
-          criteria: [
-            "Shows critical thinking about common training failures",
-            "Identifies real problems (too boring, too technical, no follow-up)",
-            "Proposes concrete improvements (gamification, phishing simulations)",
-            "Understands the difference between compliance and real behavior change",
-            "Demonstrates quality awareness and differentiation"
-          ],
-          redFlag: "Defends bad practices, no self-reflection, or generic answers",
-          goodAnswer: "They are often too theoretical or too infrequent. Better are short, practical sessions with real examples from daily work life. Focus on behavior change, not just checkbox compliance."
+          redFlag: "Just posts what's trending or what they personally like, no strategy",
+          goodAnswer: "I start by understanding the brand's goals - are we building awareness, driving sales, or growing community? Then I analyze the target audience: what they care about, when they're online, what format they prefer. I create content pillars (e.g., educational, entertaining, promotional) and mix trending topics with evergreen content that aligns with brand values."
         }
       ]
     },
     {
-      title: "2. Technical Fundamentals",
+      title: "2. Content Planning & Brand Consistency",
       questions: [
         {
           id: 3,
-          title: "Question 3 – Technical Foundation",
-          description: "Explain the difference between a Vulnerability Scan and a Penetration Test – and when to use each.",
+          title: "Question 3 – Content Planning",
+          description: "How do you plan content for one month?",
           criteria: [
-            "Clearly differentiates: Vuln Scan = automated, broad; Pentest = manual, deep",
-            "Explains when to use what (compliance vs. real security validation)",
-            "Understands limitations of each approach",
-            "Shows professional terminology and methodology awareness",
-            "Mentions practical tools or frameworks (Nessus, OWASP, etc.)"
+            "Uses a content calendar or planning tool",
+            "Plans ahead but stays flexible for trends",
+            "Considers posting frequency and optimal times",
+            "Balances different content types and formats",
+            "Includes holidays, events, and campaigns"
           ],
-          redFlag: "Confuses the two, purely theoretical, or no practical application knowledge",
-          goodAnswer: "A vulnerability scan automatically searches for known vulnerabilities. A penetration test goes further and checks whether these vulnerabilities can actually be exploited. Scans are regular, pentests are targeted and more in-depth."
+          redFlag: "Posts randomly or 'whenever I have time', no structure",
+          goodAnswer: "I use a content calendar tool like Later or Asana. At the start of each month, I map out key dates (holidays, product launches, campaigns) and create a mix of planned content and buffer slots for trending topics. I plan 3-4 posts per week per platform, considering optimal posting times for each audience. I batch-create content in advance but leave room for real-time engagement."
         },
         {
-          id: 4,
-          title: "Question 4 – Attack & Defense",
-          description: "Name a typical attack vector in corporate networks and how you would analyze it technically.",
+          id: 8,
+          title: "Question 8 – Brand Voice",
+          description: "How do you make sure posts match a brand's tone and values?",
           criteria: [
-            "Names realistic attack vector (phishing, unpatched systems, weak credentials)",
-            "Describes technical analysis methodology",
-            "Mentions tools and techniques (log analysis, traffic inspection)",
-            "Shows systematic thinking (recon → exploit → post-exploit)",
-            "Understands both offensive and defensive perspectives"
+            "Creates or follows brand guidelines/style guide",
+            "Understands brand personality (formal, playful, professional)",
+            "Reviews content before posting for consistency",
+            "Gives examples of adapting tone for different contexts",
+            "Considers visual consistency (colors, fonts, filters)"
           ],
-          redFlag: "Only theoretical knowledge, no methodology, or unrealistic scenarios",
-          goodAnswer: "A common attack vector is an unpatched server. I would check which services are running, whether known vulnerabilities exist, and whether they are accessible from outside."
-        },
-        {
-          id: 5,
-          title: "Question 5 – Attacker Mindset",
-          description: "If you had to attack a small company: Where would you start – and why?",
-          criteria: [
-            "Demonstrates hacker mindset and prioritization",
-            "Starts with reconnaissance (OSINT, external footprint)",
-            "Identifies realistic entry points (email, public services, human factor)",
-            "Shows strategic thinking about weakest link",
-            "Balances technical and social engineering approaches"
-          ],
-          redFlag: "Jumps to complex attacks, no methodology, or unrealistic approach",
-          goodAnswer: "Usually at email access or publicly accessible systems, because they are often poorly secured. The goal is always the easiest path with the greatest effect."
+          redFlag: "Posts inconsistently or doesn't understand brand identity",
+          goodAnswer: "I start by creating or studying the brand's style guide - tone of voice, key phrases, visual identity. For example, if a brand is 'approachable and helpful,' I use conversational language and emojis. If it's 'professional and expert,' I keep it formal. I always review captions and visuals against brand guidelines before posting and maintain consistent filters, colors, and fonts."
         }
       ]
     },
     {
-      title: "3. Professional Ethics & Client Management",
+      title: "3. Engagement & Community Management",
       questions: [
         {
-          id: 6,
-          title: "Question 6 – Responsibility & Ethics",
-          description: "How do you handle discovering a critical vulnerability that nobody else knows about?",
+          id: 4,
+          title: "Question 4 – Engagement & Community",
+          description: "What do you do to increase engagement (likes, comments, shares)?",
           criteria: [
-            "Shows mature, responsible approach",
-            "Mentions immediate reporting to stakeholders",
-            "Understands responsible disclosure principles",
-            "Considers compliance and legal implications (NDA, data protection)",
-            "Demonstrates professionalism and trustworthiness"
+            "Creates interactive content (polls, questions, challenges)",
+            "Responds to comments and DMs promptly",
+            "Uses strong CTAs (call-to-actions)",
+            "Posts at optimal times for the audience",
+            "Builds community through consistent interaction"
           ],
-          redFlag: "Suggests publicizing immediately, cavalier attitude, or unethical approach",
-          isKO: true,
-          goodAnswer: "I document it cleanly, inform the responsible parties, and give clear recommendations for resolution. I do not use the information for my own purposes."
+          redFlag: "Focuses only on posting, doesn't engage with audience",
+          goodAnswer: "I create interactive content like polls, 'this or that' posts, and open-ended questions to spark conversation. I always respond to comments within 2 hours to boost algorithm visibility. I use clear CTAs like 'Tag a friend who needs this' or 'Save this for later.' I also engage with our followers' content, not just expect them to engage with ours."
         },
         {
           id: 7,
-          title: "Question 7 – Client Communication",
-          description: "A client doesn't understand your security recommendation and thinks it's excessive. What do you do?",
+          title: "Question 7 – Handling Negative Comments",
+          description: "How do you handle negative comments or a social media crisis?",
           criteria: [
-            "Shows consulting competence and patience",
-            "Uses business language (risk, cost, impact) not technical jargon",
-            "Provides real-world examples or analogies",
-            "Demonstrates conflict resolution and persuasion skills",
-            "Respects client perspective while educating"
+            "Stays calm and professional",
+            "Responds quickly but thoughtfully",
+            "Takes serious issues to DMs or offline",
+            "Knows when to escalate to management",
+            "Learns from criticism and adjusts if valid"
           ],
-          redFlag: "Gets defensive, insists without explaining, or gives up easily",
+          redFlag: "Deletes all negative comments, gets defensive, or ignores issues",
           isKO: true,
-          goodAnswer: "I explain the risk understandably, preferably with examples. If the client still decides against it, I document that and respect their decision."
+          goodAnswer: "I stay calm and respond professionally. For constructive criticism, I acknowledge it and offer a solution publicly. For serious complaints, I move the conversation to DMs to resolve privately. I never delete comments unless they're spam or abusive. For a crisis, I immediately inform management and follow our crisis communication plan. I always respond within 1 hour during a crisis."
         }
       ]
     },
     {
-      title: "4. Learning & Role Flexibility",
+      title: "4. Analytics & Performance",
       questions: [
         {
-          id: 8,
-          title: "Question 8 – Learning & Development",
-          description: "How do you keep your IT security knowledge current? Name concrete sources or methods.",
+          id: 5,
+          title: "Question 5 – Analytics & KPIs",
+          description: "Which metrics do you track to measure success on social media?",
           criteria: [
-            "Names specific, credible sources (blogs, podcasts, CVE feeds, Twitter/X)",
-            "Shows intrinsic motivation and continuous learning",
-            "Mentions practical learning (CTFs, labs, home lab)",
-            "Demonstrates community involvement (conferences, forums)",
-            "Balances breadth and depth in learning approach"
+            "Names relevant KPIs (engagement rate, reach, impressions, CTR)",
+            "Connects metrics to business goals",
+            "Understands difference between vanity and valuable metrics",
+            "Uses analytics tools (platform insights, Google Analytics)",
+            "Makes data-driven decisions"
           ],
-          redFlag: "Vague answers, no concrete sources, or only certificates without practical learning",
-          goodAnswer: "I read tech blogs, use online training, follow security bulletins, and also try things out practically. Continuous learning is part of the job."
+          redFlag: "Only tracks follower count, doesn't understand meaningful metrics",
+          goodAnswer: "I track engagement rate (likes, comments, shares divided by reach) as the most important metric. For awareness campaigns, I focus on reach and impressions. For conversion campaigns, I track click-through rate and website traffic via UTM links. I use platform insights and tools like Sprout Social to analyze trends weekly and adjust strategy monthly based on what's working."
         },
         {
-          id: 9,
-          title: "Question 9 – Role Flexibility",
-          description: "How would you switch your work focus between Awareness Trainer and Technical Pentester?",
+          id: 6,
+          title: "Question 6 – Paid Ads Basics",
+          description: "What is your experience with paid social media ads?",
           criteria: [
-            "Shows understanding of both roles and their differences",
-            "Demonstrates flexibility and context switching ability",
-            "Explains mindset shift (teaching vs. breaking)",
-            "Mentions time management or planning strategies",
-            "Shows genuine interest in both aspects"
+            "Has created or managed paid campaigns",
+            "Understands targeting options (demographics, interests, lookalikes)",
+            "Knows basic ad formats and placements",
+            "Tracks ROI and cost per result",
+            "Can optimize campaigns based on performance"
           ],
-          redFlag: "Prefers only one role strongly, can't articulate differences, or shows inflexibility",
-          goodAnswer: "Awareness requires communication, pentests require focus. I can separate both and see technical work as a good foundation for realistic training scenarios."
+          redFlag: "No experience with paid ads or doesn't understand ROI",
+          goodAnswer: "I've managed paid campaigns on Meta (Facebook/Instagram) and TikTok. I set up campaigns with clear objectives (awareness, traffic, conversions), create custom audiences based on demographics and interests, and use A/B testing for creative and copy. I monitor cost per click and conversion rate daily and optimize by pausing underperforming ads and scaling winners. My recent campaign achieved a 3.2% CTR and €2.50 CPA."
+        }
+      ]
+    },
+    {
+      title: "5. Learning & Adaptation",
+      questions: [
+        {
+          id: 9,
+          title: "Question 9 – Trends & Updates",
+          description: "How do you stay up to date with social media trends and algorithm changes?",
+          criteria: [
+            "Follows industry leaders and creators",
+            "Reads blogs, newsletters (Social Media Examiner, Later, HubSpot)",
+            "Tests new features early",
+            "Participates in communities or groups",
+            "Shows genuine curiosity and experimentation"
+          ],
+          redFlag: "Doesn't follow trends or learn about platform updates",
+          goodAnswer: "I follow social media experts like Matt Navarra and Later's blog for algorithm updates. I'm active in Facebook groups for social media managers where we share insights. I test new features immediately when platforms roll them out - like Instagram Reels when it launched. I also spend 30 minutes daily scrolling to see what's trending and how brands are adapting."
         }
       ]
     }
@@ -179,7 +169,7 @@ const CybersecurityAssessment = () => {
   const allQuestions = categories.flatMap(cat => cat.questions);
 
   useEffect(() => {
-    const stored = localStorage.getItem('cybersecurityAssessments');
+    const stored = localStorage.getItem('socialMediaAssessments');
     if (stored) {
       setAllCandidates(JSON.parse(stored));
     }
@@ -194,7 +184,7 @@ const CybersecurityAssessment = () => {
         decision: "NO HIRE",
         color: "red",
         icon: XCircle,
-        reasoning: "Critical ethics or communication issues. Questions 6 and 7 are non-negotiable for client-facing security roles. Candidate shows insufficient professional maturity or client management skills."
+        reasoning: "Critical crisis management failure. Question 7 is non-negotiable for community-facing roles. Candidate shows insufficient professionalism or conflict resolution skills needed for brand reputation management."
       };
     }
     
@@ -203,7 +193,7 @@ const CybersecurityAssessment = () => {
         decision: "STRONG HIRE",
         color: "green",
         icon: CheckCircle,
-        reasoning: "Exceptional candidate with strong technical foundation, excellent communication skills, and professional ethics. Shows both hacker mindset and client-facing maturity. Ready for immediate deployment in dual-role capacity."
+        reasoning: "Exceptional candidate with strong strategic thinking, hands-on platform experience, and data-driven approach. Ready to manage social media independently and drive measurable results."
       };
     }
     
@@ -212,7 +202,7 @@ const CybersecurityAssessment = () => {
         decision: "HIRE",
         color: "green",
         icon: CheckCircle,
-        reasoning: "Solid candidate with good balance between technical and soft skills. Demonstrates potential for both awareness training and technical security work. May need some mentoring in weaker areas."
+        reasoning: "Solid candidate with good understanding of social media fundamentals and practical experience. Shows potential to grow with proper guidance and clear KPIs."
       };
     }
     
@@ -221,7 +211,7 @@ const CybersecurityAssessment = () => {
         decision: "MAYBE",
         color: "yellow",
         icon: AlertCircle,
-        reasoning: "Average candidate with some strengths but notable gaps. Consider for specialized role (either pure technical or pure training) rather than dual role. Extended trial period recommended."
+        reasoning: "Entry-level candidate with basic knowledge but gaps in strategy, analytics, or crisis management. Consider for junior role with close supervision and training plan."
       };
     }
     
@@ -229,7 +219,7 @@ const CybersecurityAssessment = () => {
       decision: "NO HIRE",
       color: "red",
       icon: XCircle,
-      reasoning: "Insufficient competency for the hybrid security role. Candidate lacks either technical depth, communication skills, or professional awareness needed for MSP security consultant position."
+      reasoning: "Insufficient competency for social media management role. Candidate lacks strategic thinking, platform knowledge, or professionalism needed to represent brands online."
     };
   };
 
@@ -255,7 +245,7 @@ const CybersecurityAssessment = () => {
 
     const updated = [...allCandidates, assessment];
     setAllCandidates(updated);
-    localStorage.setItem('cybersecurityAssessments', JSON.stringify(updated));
+    localStorage.setItem('socialMediaAssessments', JSON.stringify(updated));
     setShowResults(true);
   };
 
@@ -292,7 +282,7 @@ const CybersecurityAssessment = () => {
             <div className="flex items-center justify-between mb-6">
               <h1 className="text-3xl font-bold text-gray-800 flex items-center gap-2">
                 <Users className="w-8 h-8" />
-                All Cybersecurity Assessments
+                All Social Media Assessments
               </h1>
               <button
                 onClick={() => setShowHistory(false)}
@@ -381,8 +371,8 @@ const CybersecurityAssessment = () => {
         <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h1 className="text-3xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-              <Shield className="w-8 h-8" />
-              Cybersecurity Assessment: {candidateName}
+              <Instagram className="w-8 h-8" />
+              Social Media Assessment: {candidateName}
             </h1>
 
             <div className="mb-8 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg">
@@ -434,7 +424,7 @@ const CybersecurityAssessment = () => {
                   Critical KO Criteria Not Met!
                 </div>
                 <p className="text-red-700 text-sm">
-                  Ethics & Communication questions (Questions 6-7) scored less than 3 points. These are non-negotiable for client-facing security roles.
+                  Crisis Management question (Question 7) scored less than 3 points. This is non-negotiable for community-facing roles.
                 </p>
               </div>
             )}
@@ -508,13 +498,13 @@ const CybersecurityAssessment = () => {
 
   if (currentStep === 'name') {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-100 flex items-center justify-center p-8">
+      <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-100 flex items-center justify-center p-8">
         <div className="bg-white rounded-lg shadow-xl p-8 max-w-md w-full">
           <div className="flex items-center justify-center mb-6">
-            <Shield className="w-16 h-16 text-red-600" />
+            <Instagram className="w-16 h-16 text-pink-600" />
           </div>
           <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">
-            Cybersecurity Consultant<br/>Interview Assessment
+            Social Media Manager<br/>Interview Assessment
           </h1>
           
           <div className="mb-6">
@@ -525,8 +515,8 @@ const CybersecurityAssessment = () => {
               type="text"
               value={candidateName}
               onChange={(e) => setCandidateName(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
-              placeholder="e.g. John Doe"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+              placeholder="e.g. Sarah Miller"
               autoFocus
             />
           </div>
@@ -535,7 +525,7 @@ const CybersecurityAssessment = () => {
             <button
               onClick={() => candidateName.trim() && setCurrentStep('questions')}
               disabled={!candidateName.trim()}
-              className="w-full px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:bg-gray-300 disabled:cursor-not-allowed font-semibold transition-colors"
+              className="w-full px-6 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 disabled:bg-gray-300 disabled:cursor-not-allowed font-semibold transition-colors"
             >
               Start Interview
             </button>
@@ -551,11 +541,11 @@ const CybersecurityAssessment = () => {
             )}
           </div>
 
-          <div className="mt-8 p-4 bg-red-50 rounded-lg border-l-4 border-red-500">
+          <div className="mt-8 p-4 bg-pink-50 rounded-lg border-l-4 border-pink-500">
             <p className="text-sm text-gray-700">
-              <strong>10 Questions</strong> in 4 categories<br/>
-              Maximum score: <strong>50 points</strong><br/>
-              <span className="text-red-700 font-semibold">⚠️ KO criteria: Ethics & Communication (Q6-7)</span>
+              <strong>9 Questions</strong> in 5 categories<br/>
+              Maximum score: <strong>45 points</strong><br/>
+              <span className="text-pink-700 font-semibold">⚠️ KO criteria: Crisis Management (Q7)</span>
             </p>
           </div>
         </div>
@@ -577,7 +567,7 @@ const CybersecurityAssessment = () => {
             <div className="flex items-center justify-between mb-4">
               <div>
                 <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
-                  <Shield className="w-6 h-6 text-red-600" />
+                  <Instagram className="w-6 h-6 text-pink-600" />
                   {candidateName}
                 </h2>
                 <p className="text-sm text-gray-500">
@@ -585,7 +575,7 @@ const CybersecurityAssessment = () => {
                 </p>
               </div>
               <div className="text-right">
-                <div className="text-3xl font-bold text-red-600">
+                <div className="text-3xl font-bold text-pink-600">
                   {Object.values(ratings).reduce((sum, r) => sum + r, 0)}
                 </div>
                 <div className="text-sm text-gray-500">Points</div>
@@ -594,14 +584,14 @@ const CybersecurityAssessment = () => {
 
             <div className="w-full bg-gray-200 rounded-full h-2">
               <div
-                className="bg-red-600 h-2 rounded-full transition-all duration-300"
+                className="bg-pink-600 h-2 rounded-full transition-all duration-300"
                 style={{ width: `${((currentQuestionIndex + 1) / allQuestions.length) * 100}%` }}
               />
             </div>
           </div>
 
-          <div className="mb-6 p-4 bg-red-50 rounded-lg">
-            <h3 className="font-semibold text-red-900">{currentCategory.title}</h3>
+          <div className="mb-6 p-4 bg-pink-50 rounded-lg">
+            <h3 className="font-semibold text-pink-900">{currentCategory.title}</h3>
           </div>
 
           <div className="mb-8">
@@ -665,7 +655,7 @@ const CybersecurityAssessment = () => {
               <textarea
                 value={notes[currentQuestion.id] || ''}
                 onChange={(e) => setNotes({...notes, [currentQuestion.id]: e.target.value})}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent resize-none"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent resize-none"
                 rows="3"
                 placeholder="Candidate's answer or additional remarks..."
               />
@@ -694,7 +684,7 @@ const CybersecurityAssessment = () => {
             ) : (
               <button
                 onClick={() => setCurrentQuestionIndex(currentQuestionIndex + 1)}
-                className="flex-1 px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 flex items-center justify-center gap-2"
+                className="flex-1 px-6 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 flex items-center justify-center gap-2"
               >
                 Next
                 <ChevronRight className="w-5 h-5" />
@@ -713,4 +703,4 @@ const CybersecurityAssessment = () => {
   );
 };
 
-export default CybersecurityAssessment;
+export default SocialMediaAssessment;
