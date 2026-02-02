@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Save, Users, Award, AlertCircle, CheckCircle, XCircle, Shield } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Save, Users, AlertCircle, CheckCircle, XCircle, Shield } from 'lucide-react';
 
 const CybersecurityAssessment = () => {
   const [currentStep, setCurrentStep] = useState('name');
